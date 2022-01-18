@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import NavbarComp from "../Componenet/NavbarComp";
+import { Card, Button } from "react-bootstrap";
 
 export default function Home() {
   const [location, setLocation] = useState({});
@@ -23,8 +23,16 @@ export default function Home() {
 
   return (
     <>
-    <NavbarComp />
-      <div>{location.type}</div>
+      <Card className=" cardstyle">
+        <Card.Img style={{ width: "18rem" }} />
+        <Card.Body>
+          <Card.Title>{location.type}</Card.Title>
+          <hr></hr>
+          <Card.Text  id="textstyling">place : {location.type}</Card.Text>
+
+          <Button id="button" variant="success">Go somewhere</Button>
+        </Card.Body>
+      </Card>
     </>
   );
 }

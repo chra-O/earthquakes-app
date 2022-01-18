@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Navbar, Container } from "react-bootstrap";
 
 export default function NavbarComp() {
-    return (
-        <div>
-            hi
-        </div>
-    )
+  return (
+    <div>
+      <Navbar bg="light" variant="light ">
+        <Container>
+          <Navbar.Brand href="/">Home</Navbar.Brand>
+        </Container>
+      </Navbar>
+    </div>
+  );
 }
