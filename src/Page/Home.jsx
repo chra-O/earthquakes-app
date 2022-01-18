@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import NavbarComp from "../Componenet/NavbarComp";
 
 export default function Home() {
   const [location, setLocation] = useState({});
@@ -11,19 +12,18 @@ export default function Home() {
       .then((response) => response.json())
 
       .then((response) => setLocation(response));
-
   };
 
   // ********************************
   useEffect(() => {
     hadelCilick();
-  }, );
-
+  });
 
   //////////
 
   return (
     <>
+    <NavbarComp />
       <div>{location.type}</div>
     </>
   );
