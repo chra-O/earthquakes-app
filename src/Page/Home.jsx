@@ -11,13 +11,20 @@ export default function Home() {
       .then((response) => response.json())
 
       .then((response) => setLocation(response));
+
   };
 
   // ********************************
   useEffect(() => {
     hadelCilick();
-  }, []);
+  }, );
+
 
   //////////
-  return <div>{location.type}</div>;
+
+  return (
+    <>
+      <div>{location.type}</div>
+    </>
+  );
 }
