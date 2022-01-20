@@ -34,7 +34,7 @@ export default function Home() {
                 time : {location.properties.detail}
               </Card.Text>
               <Button id="button" variant="success">
-                <Link to={`/details/:${location.id}`} className="linkstyle">
+                <Link to={`/details/${location.id}`} className="linkstyle">
                   Detail
                 </Link>
               </Button>

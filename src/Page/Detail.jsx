@@ -4,37 +4,33 @@ import { Link, useParams } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 export default function Detail() {
   const { id } = useParams();
-  const [state, setstate] = useState([]);
-  const [s, ss] = useState([]);
-  const url = [];
+  const [s, ss] = useState([{}]);
+
+  ////////////////////////
   useEffect(() => {
     fetch(
-      "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2022-01-01&endtime=2022-12-01&limit=10"
+      `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventid=${id}`
     )
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        setstate(data.features);
+        ss(data.properties);
       });
   }, []);
-  state.map((index) => {
-    return url.push(index.properties.detail);
-  });
-  ////////////////////////
-  useEffect(() => {
-    url.map((index) => {
-      fetch(index)
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          ss(data.properties);
-        });
-    });
-  }, []);
-  console.log(state);
-  console.log(s);
+  //i have problem with map . so i can access longitude and latitude
 
-  return <> </>;
+  return (
+    <>
+      <Card className=" cardstyle">
+        <Card.Body>
+          <Card.Title> palce : {s.place}</Card.Title>
+          <hr></hr>
+          <Card.Text id="textstyling">Time : {s.time}</Card.Text>
+          <Card.Text id="textstyling">Type : {s.type}</Card.Text>
+          <Card.Text id="textstyling"></Card.Text>
+        </Card.Body>
+      </Card>
+    </>
+  );
 }
