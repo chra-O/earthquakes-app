@@ -10,11 +10,19 @@
   display: block;
   color: antiquewhite;
   margin-left: 80%;
-}
+} zo
 .linkstyle {
   color: aliceblue;
   text-decoration: none;
 }
 .linkstyle:hover {
   color: aliceblue;
+}
+#navbarStyle {
+  text-decoration: none;
+  color: rgb(51, 49, 49);
+}
+#navbarStyle:hover {
+  color: rgba(218, 28, 28, 0.89);
+ 
 }
